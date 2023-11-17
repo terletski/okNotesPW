@@ -1,0 +1,22 @@
+{
+  "name": "okNotesPlaywright",
+  "version": "1.0.0",
+  "description": "TAF Ok notes using Playwright + Cucumber",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cucumber-js -p test_runner --tags @basket"
+  },
+  "keywords": [],
+  "author": "Eugene Terletski",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.39.0",
+    "@types/node": "^20.9.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2",
+    "@cucumber/cucumber": "^10.0.1"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  }
+}
