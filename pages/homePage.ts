@@ -44,7 +44,7 @@ class HomePage extends BasePage {
 
   async addDifferentItems(countOfItems: number, discountType: string) {
     for (let i = 1; i <= countOfItems; i++) {
-      const discountItemLocator = discountType !== null ? this['Non Discount item'](i)
+      const discountItemLocator = discountType !== null ? this["Non Discount item"](i)
         : this["Discount item"](i);
       await Waiters.waitForElementVisibility(discountItemLocator);
       await BasePage.waitForElementAndClick(discountItemLocator);
