@@ -4,17 +4,23 @@
   "description": "TAF Ok notes using Playwright + Cucumber",
   "main": "index.js",
   "scripts": {
-    "test": "npx cucumber-js -p test_runner --tags @basket"
+    "test": "npx cucumber-js -p test_runner --tags @basket",
+    "eslint": "npx eslint",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "Eugene Terletski",
   "license": "ISC",
   "devDependencies": {
+    "@cucumber/cucumber": "^10.0.1",
     "@playwright/test": "^1.39.0",
     "@types/node": "^20.9.0",
+    "@typescript-eslint/eslint-plugin": "^6.11.0",
+    "@typescript-eslint/parser": "^6.11.0",
+    "eslint": "^8.54.0",
+    "husky": "^8.0.3",
     "ts-node": "^10.9.1",
-    "typescript": "^5.2.2",
-    "@cucumber/cucumber": "^10.0.1"
+    "typescript": "^5.2.2"
   },
   "dependencies": {
     "dotenv": "^16.3.1"
