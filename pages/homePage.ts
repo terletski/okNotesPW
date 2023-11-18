@@ -31,7 +31,9 @@ class HomePage extends BasePage {
   get ["Non Discount item"]() {
     return (itemCount: number) =>
       `(//*[contains(@class, "note-item") and not(contains(@class, "hasDiscount"))]//button)[${itemCount}]`;
-
+  }
+  get ["Basket window"]() {
+    return ".dropdown-menu-right.show";
   }
 
   get ["Count Of Discount item"]() {

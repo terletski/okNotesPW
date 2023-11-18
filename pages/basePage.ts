@@ -1,10 +1,10 @@
 import Waiters from "../utils/waiters";
 
 export default class BasePage {
-  static async openApp(appName: string) {
+  static async openApp() {
     const url = global.url;
     await global.page.goto(url);
-    console.info(`Opened page ${url}. Application name: ${appName}`);
+    console.info(`Opened page ${url}`);
   }
 
   static getUrl() {
