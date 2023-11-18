@@ -44,7 +44,7 @@ class HomePage extends BasePage {
 
   async addDifferentItems(countOfItems: number, discountType: string) {
     for (let i = 1; i <= countOfItems; i++) {
-      const discountItemLocator = discountType !== null ? this["Non Discount item"](i)
+      const discountItemLocator = discountType !== null ? this['Non Discount item'](i)
         : this["Discount item"](i);
       await Waiters.waitForElementVisibility(discountItemLocator);
       await BasePage.waitForElementAndClick(discountItemLocator);
@@ -61,7 +61,7 @@ class HomePage extends BasePage {
   }
 
   async addItemToBasket(countOfItems: number, different: string, discountType: string) {
-    different.includes('same') ? await this.addSameItems(countOfItems, discountType) :
+    different.includes("same") ? await this.addSameItems(countOfItems, discountType) :
       await this.addDifferentItems(countOfItems, discountType);
   }
 }
