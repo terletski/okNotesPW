@@ -1,4 +1,4 @@
-import {setDefaultTimeout, AfterAll, Before, BeforeAll} from "@cucumber/cucumber";
+import {setDefaultTimeout, Before, BeforeAll, After, AfterAll} from "@cucumber/cucumber";
 import {chromium} from "@playwright/test";
 
 import dotenv from "dotenv";
@@ -15,12 +15,19 @@ BeforeAll(async function () {
 Before(async function () {
   const context = await global.browser.newContext();
   global.page = await context.newPage();
-
   global.url = process.env.URL;
   global.userName = process.env.USER_NAME;
   global.userPassword = process.env.PASSWORD;
 });
 
+After(async function (scenario) {
+  const screenshot = await global.page.screenshot();
+  if(scenario.result.status === "FAILED") {
+    this.attach(screenshot, "image/png");
+  }
+});
+
 AfterAll(async function () {
+  await global.page.close();
   await global.browser.close();
 });

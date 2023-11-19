@@ -1,14 +1,16 @@
 {
-  "name": "Ok Notes Playwright",
+  "name": "OkNotesPlaywrightCucumber",
   "version": "1.0.0",
   "description": "TAF Ok notes using Playwright + Cucumber",
   "main": "index.js",
   "scripts": {
+    "parallel-test": "npx cucumber-js --parallel 5 -p test_runner --tags @basket",
     "test": "npx cucumber-js -p test_runner --tags @basket",
     "eslint": "npx eslint",
     "prepare": "husky install",
     "allure:serve": "allure serve allure-results",
-    "allure:generate": "allure generate allure-results --clean -o allure-report"
+    "allure:generate": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "npm run allure:generate && allure open allure-report"
   },
   "keywords": [],
   "author": "Eugene Terletski",

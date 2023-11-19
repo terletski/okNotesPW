@@ -1,6 +1,11 @@
 # okNotesPW
-Ok notes using Playwright + Cucumber
+"Ok notes Application" using Playwright + Cucumber
 
-How to run:
+Firstly run `npm install` to install the dependencies 
 
-npm run test
+How to run tests:
+`npm run test`
+
+Allure Reports
+To open allure report after tests run you can use: `npm run allure:serve`
+

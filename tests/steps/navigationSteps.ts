@@ -11,9 +11,9 @@ Given(/^User navigates to the "([^"]+)" application$/, async (applicationName: s
   await Waiters.waitForElement(HomePage[applicationName]);
 });
 
-Then(/^I should be on "([^"]+)" page$/, async (pageName: string) => {
-  logger.info(`I should be on "${pageName}" page`);
+Then(/^I should be on "([^"]+)" page$/, async (page: string) => {
+  logger.info(`I should be on "${page}" page`);
   const actualUrl = BasePage.getUrl();
   await Waiters.waitForLoadState();
-  expect(actualUrl).toEqual(`${global.url}${pageName.toLowerCase()}`);
+  expect(actualUrl).toEqual(`${global.url}${page.toLowerCase()}`);
 });

@@ -24,6 +24,10 @@ class BasketPage extends BasePage {
     return "span.basket_price";
   }
 
+  get ["Go To Basket button"]() {
+    return "[href='/basket']";
+  }
+
   async cleanUpBasket() {
     await Waiters.waitForLoadState();
     await Waiters.waitForElement(HomePage["Basket Count item"]);

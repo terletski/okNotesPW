@@ -19,10 +19,6 @@ class HomePage extends BasePage {
     return "#dropdownBasket";
   }
 
-  get ["Go To Basket button"]() {
-    return "[href='/basket']";
-  }
-
   get ["Discount item"]() {
     return (itemCount: number) =>
       `(//*[contains(@class, "note-item") and (contains(@class, "hasDiscount"))]//button)[${itemCount}]`;
